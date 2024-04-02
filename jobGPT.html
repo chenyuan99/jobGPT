@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+    <title>Offer Plus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Assessment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #e8ecf2;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            background-color: #00b7a6;
+            color: white;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #00b7a6;
+            color: white;
+        }
+
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<div class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand " href="/">
+            <span style="color:#861F41;">Offers+</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="/jobgpt/">jobGPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="/company/">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-light"
+                           href="/accounts/profile/">Cyuan8</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/accounts/logout/"
+                           class="btn btn-outline-danger">登出</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/add-application">
+                        <span data-feather="file"></span>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq">
+                        <span data-feather="info"></span>
+                        FAQ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <span data-feather="bar-chart-2"></span>
+                        History
+                    </a>
+                </li>
+            </ul>
+            <div class="footer" style="bottom: 0">
+                <div class="container-fluid text-center">
+                    <span class="text-muted"> 2024 Matrix Software</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col py-3">
+        
+    <div class="container">
+        <h1>JobGPT</h1>
+        <nav>
+            <button class="btn btn-light">Cover Letter</button>
+            <button class="btn btn-light">Resume</button>
+            <button class="btn btn-light">Recommendation</button>
+        </nav>
+        <p>JobGPT is a job recommendation system based on GPT-2. It is a web application that recommends jobs based on
+            your
+            input>
+
+        <h2>How to use</h2>
+
+        <p>1. Enter your job title and job description in the text box.</p>
+
+        <p>2. Click the "Submit" button.</p>
+
+        <p>3. The recommended jobs will be displayed.</p>
+
+        <h2>Input</h2>
+        <textarea type="text" class="form-control" id="prompt"></textarea>
+        <button class="btn btn-default" id="prompt-generator">Run</button>
+
+        <h2>Generated Third person Recommendation</h2>
+
+        <textarea type="text" class="form-control" id="generated-prompt"></textarea>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#prompt-generator").click(function () {
+                var prompt = $("#prompt").val();
+                console.log(prompt);
+                $.ajax({
+                    type: "POST",
+                    url: "prompt",
+                    data: {
+                        'prompt': prompt,
+                        'csrfmiddlewaretoken': 'OiQgW5mx2hAz021GUuUMRaceCcZ6fGCYkFZO99cQ18tff7mv0j6FgSlqUlSV4tS0'
+                    },
+                    success: function (data) {
+                        $("#generated-prompt").val(data["prompt"]);
+
+                        console.log(data["prompt"]);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+    </div>
+</div>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>

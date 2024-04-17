@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Large Flask Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  # 引用 Bootstrap CSS
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Large Flask Project - Generate Text with OpenAI</h1>
+    <p>Enter a prompt to generate text using OpenAI GPT.</p>
+
+    <!-- 输入提示 -->
+    <textarea name="prompt" class="form-control" rows="4" placeholder="Enter your prompt..."></textarea>
+
+    <!-- 生成按钮 -->
+    <button id="generate" class="btn btn-primary mt-2">Generate Text</button>
+
+    <!-- 显示生成的文本 -->
+    <h2>Generated Text</h2>
+    <div id="generated-text" class="border p-3"></div>
+
+    <p><a href="/auth/logout">Logout</a></p>  # 登出链接
+</div>
+
+<!-- 引用 JQuery 和 Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- 引用 JavaScript 文件 -->
+<script src="/static/app.js"></script>
+</body>

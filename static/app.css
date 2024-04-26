@@ -6,28 +6,38 @@
   box-sizing: border-box; /* Ensures all elements' padding and borders are included within the specified width and height */
 }
 
+#self-introduction {
+  border: 1px solid #006400; /* Dark green border */
+  padding: 20px; /* Padding */
+  background-color: #f9f9f9; /* Background color */
+  min-height: 200px; /* Minimum height */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: left; /* Text aligns to the left */
+}
+
 body {
   font-family: "Roboto", sans-serif; /* Sets the global font */
-  margin: 0; /* Clears the default margin */
-  padding: 0; /* Clears the default padding */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
   background-color: #f5f5f5; /* Sets the background color */
 }
 
 /* Main Container */
 .container {
-  background-color: white; /* Background color for the container */
-  padding: 20px; /* Padding within the container */
-  width: 100%; /* Container takes up the full width */
-  height: auto; /* Height adjusts automatically */
-  text-align: center; /* Text is centered */
+  border: 1px solid #006400; /* Dark green border */
+  padding: 20px; /* Padding */
+  background-color: #f9f9f9; /* Background color */
+  min-height: 200px; /* Minimum height */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: left; /* Text aligns to the left */
 }
 
 /* Form Styles */
 #form {
   margin-top: 20px; /* Top margin for the form */
-  text-align: center; /* Form is centered */
+  text-align: center; /* Centers the form */
   border: 1px solid #006400; /* Dark green border */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding within the form */
@@ -37,20 +47,19 @@ body {
 
 /* Interview Question List */
 #interview-questions {
-  list-style-type: decimal; /* Uses a numbered list */
+  list-style-type: decimal; /* Uses decimal numbering for the list */
   padding-left: 20px; /* Left padding for the list */
   text-align: left; /* Text aligns to the left */
 }
 
-#interview-questions input {
-  font-size: 1.2rem; /* Font size for the input fields */
-  padding: 10px; /* Padding within the input fields */
-  margin-top: 8px; /* Top margin for the input fields */
-  margin-bottom: 16px; /* Bottom margin for the input fields */
-  border: 1px solid #006400; /* Border color for the input fields */
+#interview-questions-output {
+  border: 1px solid #006400; /* Dark green border */
+  padding: 20px; /* Padding */
+  background-color: #f9f9f9; /* Background color */
+  min-height: 200px; /* Minimum height */
   border-radius: 10px; /* Rounded corners */
-  width: 80%; /* Width of the input fields */
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the input fields */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: left; /* Text aligns to the left */
 }
 
 /* Submit Button Styles */
@@ -61,10 +70,10 @@ body {
   font-size: 1.5rem; /* Font size for the button */
   color: white; /* Font color for the button */
   border: 1px solid #006400; /* Border color for the button */
-  border-radius: 10px; /* Rounded corners */
-  cursor: pointer; /* Cursor changes to a pointer on hover */
+  border-radius: 10px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
   transition: 0.3s opacity; /* Transition effect for hover */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow to the button */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect on the button */
 }
 
 .btn:hover {
@@ -74,11 +83,22 @@ body {
 /* Resume Output Area */
 #resume-output {
   border: 1px solid #006400; /* Dark green border */
-  padding: 20px; /* Padding within the output area */
+  padding: 20px; /* Padding */
   background-color: #f9f9f9; /* Background color */
   min-height: 200px; /* Minimum height */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  text-align: left; /* Text aligns to the left */
+}
+
+/* Cover Letter Output Area */
+#cover-letter-output {
+  border: 1px solid #006400; /* Dark green border */
+  padding: 20px; /* Padding */
+  background-color: #f9f9f9; /* Background color */
+  min-height: 200px; /* Minimum height */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
   text-align: left; /* Text aligns to the left */
 }
 
@@ -88,5 +108,5 @@ body {
 }
 
 .unhighlight {
-  border: 1px solid gray; /* Border to unhighlight */
+  border: 1px solid gray; /* Neutral border to unhighlight */
 }

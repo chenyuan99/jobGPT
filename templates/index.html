@@ -2,31 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Large Flask Project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  # 引用 Bootstrap CSS
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview & Resume Generator</title>
+    <link rel="stylesheet" href="app.css"> <!-- 引用 CSS 文件 -->
 </head>
 <body>
-<div class="container mt-5">
-    <h1>Large Flask Project - Generate Text with OpenAI</h1>
-    <p>Enter a prompt to generate text using OpenAI GPT.</p>
+    <div class="content">
+        <!-- 自我介绍输入框 -->
+        <h2>Self-Introduction</h2>
+        <textarea id="introduction" placeholder="Enter your self-introduction here..." rows="6" style="width: 100%;"></textarea> <!-- 自我介绍文本框 -->
 
-    <!-- 输入提示 -->
-    <textarea name="prompt" class="form-control" rows="4" placeholder="Enter your prompt..."></textarea>
+        <!-- 按钮区 -->
+        <div class="button-area" style="margin-top: 20px;">
+            <button class="btn" id="generate-interview-questions">Generate Interview Questions</button> <!-- 生成面试问题按钮 -->
+            <button class="btn" id="generate-resume">Generate Resume</button> <!-- 生成简历按钮 -->
+        </div>
 
-    <!-- 生成按钮 -->
-    <button id="generate" class="btn btn-primary mt-2">Generate Text</button>
+        <!-- 面试问题输出区域 -->
+        <h3>Generated Interview Questions</h3>
+        <ol id="interview-questions-output" style="padding: 20px; border: 1px solid #ccc;">
+            <!-- 面试问题将在这里生成 -->
+        </ol>
 
-    <!-- 显示生成的文本 -->
-    <h2>Generated Text</h2>
-    <div id="generated-text" class="border p-3"></div>
+        <!-- 简历输出区域 -->
+        <h3>Generated Resume</h3>
+        <div id="resume-output" style="padding: 20px; border: 1px solid #ccc;">
+            <!-- 简历将在这里生成 -->
+        </div>
+    </div>
 
-    <p><a href="/auth/logout">Logout</a></p>  # 登出链接
-</div>
-
-<!-- 引用 JQuery 和 Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- 引用 JavaScript 文件 -->
-<script src="/static/app.js"></script>
+    <!-- 引用 JavaScript 文件 -->
+    <script src="app.js"></script> <!-- 引用 JavaScript -->
 </body>
+</html>

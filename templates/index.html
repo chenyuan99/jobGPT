@@ -2,36 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview & Resume Generator</title>
-    <link rel="stylesheet" href="app.css"> <!-- 引用 CSS 文件 -->
+    <title>Self-Introduction Based Generator</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <div class="content">
-        <!-- 自我介绍输入框 -->
-        <h2>Self-Introduction</h2>
-        <textarea id="introduction" placeholder="Enter your self-introduction here..." rows="6" style="width: 100%;"></textarea> <!-- 自我介绍文本框 -->
+        <!-- Text area for self-introduction -->
+        <h2>Enter Your Self-Introduction:</h2>
+        <textarea id="self-introduction" rows="5" cols="60" placeholder="Write your self-introduction here..."></textarea>
 
-        <!-- 按钮区 -->
-        <div class="button-area" style="margin-top: 20px;">
-            <button class="btn" id="generate-interview-questions">Generate Interview Questions</button> <!-- 生成面试问题按钮 -->
-            <button class="btn" id="generate-resume">Generate Resume</button> <!-- 生成简历按钮 -->
+        <!-- Form with buttons for generating content -->
+        <form id="form">
+            <button type="button" onclick="generateInterviewQuestions()" class="btn">Generate Interview Questions</button>
+            <button type="button" onclick="generateResume()" class="btn">Generate Resume</button>
+            <button type="button" onclick="generateCoverLetter()" class="btn">Generate Cover Letter</button>
+        </form>
+
+        <!-- Sections to display generated content -->
+        <div id="interview-questions-output" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+            <h3>Generated Interview Questions:</h3>
+            <!-- Interview questions output here -->
         </div>
 
-        <!-- 面试问题输出区域 -->
-        <h3>Generated Interview Questions</h3>
-        <ol id="interview-questions-output" style="padding: 20px; border: 1px solid #ccc;">
-            <!-- 面试问题将在这里生成 -->
-        </ol>
+        <div id="resume-output" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+            <h3>Generated Resume:</h3>
+            <!-- Resume output here -->
+        </div>
 
-        <!-- 简历输出区域 -->
-        <h3>Generated Resume</h3>
-        <div id="resume-output" style="padding: 20px; border: 1px solid #ccc;">
-            <!-- 简历将在这里生成 -->
+        <div id="cover-letter-output" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+            <h3>Generated Cover Letter:</h3>
+            <!-- Cover letter output here -->
         </div>
     </div>
 
-    <!-- 引用 JavaScript 文件 -->
-    <script src="app.js"></script> <!-- 引用 JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,68 +1,98 @@
-// 获取表单和按钮
-const introductionField = document.querySelector("#introduction");
-const generateInterviewQuestionsBtn = document.querySelector("#generate-interview-questions");
-const generateResumeBtn = document.querySelector("#generate-resume");
+// Form and self-introduction text area
+const form = document.querySelector("#form");
+const selfIntroduction = document.querySelector("#self-introduction");
 
-// 为生成面试问题的按钮添加事件监听器
-generateInterviewQuestionsBtn.addEventListener("click", function () {
-  generateInterviewQuestions(); // 调用生成面试问题的函数
-});
+// Function to generate interview questions
+// Fetch and handle interview questions, resume, and cover letter
 
-// 为生成简历的按钮添加事件监听器
-generateResumeBtn.addEventListener("click", function () {
-  generateResume(); // 调用生成简历的函数
-});
-
-// 生成面试问题的函数
-// 生成面试问题的函数
+// Function to generate interview questions
 function generateInterviewQuestions() {
-    const introduction = document.querySelector("#introduction").value; // 获取自我介绍内容
+    const introduction = document.querySelector("#self-introduction").value;  // Get self-introduction
+
+    const formData = new URLSearchParams();
+    formData.append("introduction", introduction);  // Prepare POST data
 
     fetch("/generate_interview_questions", {
         method: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded",  // Content type for form data
         },
-        body: new URLSearchParams({ introduction }), // 发送自我介绍
+        body: formData,
     })
-        .then((response) => response.json()) // 解析响应为 JSON
-        .then((data) => {
-            const interviewQuestionsOutput = document.querySelector("#interview-questions-output"); // 面试问题输出区域
-            interviewQuestionsOutput.innerHTML = ""; // 清空之前的内容
-
-            const questions = data.interview_questions.split('\n'); // 将面试问题拆分为数组
-            questions.forEach((question) => {
-                const listItem = document.createElement("li"); // 创建列表项
-                listItem.textContent = question; // 设置列表项内容
-                interviewQuestionsOutput.appendChild(listItem); // 添加到输出区域
-            });
-        })
-        .catch((error) => {
-            console.error("Error generating interview questions:", error); // 错误处理
-        });
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to generate interview questions.");
+        }
+        return response.json();  // Parse JSON
+    })
+    .then((data) => {
+        const output = document.querySelector("#interview-questions-output");
+        output.innerHTML = data.interview_questions;  // Display interview questions with formatting
+    })
+    .catch((error) => {
+        console.error("Error generating interview questions:", error);  // Handle errors
+    });
 }
 
-// 生成简历的函数
+// Function to generate resume
 function generateResume() {
-    const introduction = document.querySelector("#introduction").value; // 获取自我介绍内容
+    const introduction = document.querySelector("#self-introduction").value;  // Get self-introduction
+
+    const formData = new URLSearchParams();
+    formData.append("introduction", introduction);  // Prepare POST data
 
     fetch("/generate_resume", {
         method: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded",  // Content type for form data
         },
-        body: new URLSearchParams({ introduction }), // 发送自我介绍
+        body: formData,
     })
-        .then((response) => response.json()) // 解析响应为 JSON
-        .then((data) => {
-            const resumeOutput = document.querySelector("#resume-output"); // 简历输出区域
-            resumeOutput.innerHTML = ""; // 清空之前的内容
-
-            const resumeElement = document.createElement("pre"); // 使用 <pre> 保持格式
-            resumeElement.textContent = data.resume; // 设置简历内容
-            resumeOutput.appendChild(resumeElement); // 添加到输出区域
-        })
-        .catch((error) => {
-            console.error("Error generating resume:", error); // 错误处理
-        });
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to generate resume.");
+        }
+        return response.json();  // Parse JSON
+    })
+    .then((data) => {
+        const output = document.querySelector("#resume-output");
+        output.innerHTML = data.resume.replace("<br>", "\n");  // Display resume with formatting
+    })
+    .catch((error) => {
+        console.error("Error generating resume:", error);  // Handle errors
+    });
 }
+
+// Function to generate cover letter
+function generateCoverLetter() {
+    const introduction = document.querySelector("#self-introduction").value;  // Get self-introduction
+
+    const formData = new URLSearchParams();
+    formData.append("introduction", introduction);  // Prepare POST data
+
+    fetch("/generate_cover_letter", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",  // Content type for form data
+        },
+        body: formData,
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to generate cover letter.");
+        }
+        return response.json();  // Parse JSON
+    })
+    .then((data) => {
+        const output = document.querySelector("#cover-letter-output");
+        output.innerHTML = data.cover_letter.replace("<br>", "\n");  // Display cover letter with formatting
+    })
+    .catch((error) => {
+        console.error("Error generating cover letter:", error);  // Handle errors
+    });
+}
+
+// Form submission event listener to prevent default behavior
+form.addEventListener("submit", function (e) {
+    e.preventDefault();  // Prevent default form submission
+});

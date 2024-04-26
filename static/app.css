@@ -1,1 +1,82 @@
+/* 导入字体 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* 全局样式 */
+* {
+  box-sizing: border-box; /* 确保所有元素的内边距和边框被包含在指定的宽度和高度内 */
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* 设置全局字体 */
+  margin: 0; /* 清除默认外边距 */
+  padding: 0; /* 清除默认内边距 */
+  background-color: #f5f5f5; /* 设置背景颜色 */
+}
+
+/* 主容器 */
+.container {
+  background-color: white; /* 设置容器背景颜色 */
+  padding: 20px; /* 设置容器内边距 */
+  width: 100%; /* 容器占据整个宽度 */
+  height: auto; /* 自动调整高度 */
+  text-align: center; /* 文本居中 */
+}
+
+/* 表单样式 */
+#form {
+  margin-top: 20px; /* 表单的上方间距 */
+  text-align: center; /* 表单居中 */
+}
+
+/* 面试问题列表 */
+#interview-questions {
+  list-style-type: decimal; /* 使用数字列表 */
+  padding-left: 20px; /* 列表左侧内边距 */
+  text-align: left; /* 文本左对齐 */
+}
+
+#interview-questions input {
+  font-size: 1.2rem; /* 输入框字体大小 */
+  padding: 10px; /* 输入框内边距 */
+  margin-top: 8px; /* 输入框上方间距 */
+  margin-bottom: 16px; /* 输入框下方间距 */
+  border: 1px solid #ccc; /* 输入框边框 */
+  border-radius: 5px; /* 输入框的圆角 */
+  width: 80%; /* 输入框宽度 */
+}
+
+/* 提交按钮样式 */
+.btn {
+  font-family: "Roboto", sans-serif; /* 按钮字体 */
+  background-color: #4CAF50; /* 按钮背景颜色 */
+  padding: 10px; /* 按钮内边距 */
+  font-size: 1.5rem; /* 按钮字体大小 */
+  color: white; /* 按钮字体颜色 */
+  border: 1px solid gray; /* 按钮边框 */
+  border-radius: 5px; /* 按钮的圆角 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+  transition: 0.3s opacity; /* 鼠标悬停时的过渡效果 */
+}
+
+.btn:hover {
+  opacity: 0.8; /* 鼠标悬停时的透明度 */
+}
+
+/* 简历输出区域 */
+#resume-output {
+  border: 1px solid #ccc; /* 设置边框 */
+  padding: 20px; /* 内边距 */
+  background-color: #f9f9f9; /* 背景颜色 */
+  min-height: 200px; /* 最小高度 */
+  text-align: left; /* 文本左对齐 */
+}
+
+/* 辅助函数样式 */
+.highlight {
+  border: 2px solid red; /* 高亮边框 */
+}
+
+.unhighlight {
+  border: 1px solid gray; /* 取消高亮边框 */
+}
 
